@@ -1,0 +1,20 @@
+<h1>Home#index</h1>
+  
+<% @job.each do |job| %>
+  	 Job title
+    <%= job.job_title %></br>
+    Company name
+    <%= job.company_name %></br>
+    Qulification
+    <%= job.qulification %>
+    Experince
+    <%= job.experince %>
+    Summary
+    <%= job.summary %>
+     No of post
+    <%= job.no_of_post %>
+    Contact number
+    <%= job.contact_number %>
+   <%= job.email %>
+   </br></br>
+    <% end %>

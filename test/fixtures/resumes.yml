@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  DOB: MyString
+  qulifaction: MyString
+  experince: MyString
+  description: MyString
+
+two:
+  name: MyString
+  DOB: MyString
+  qulifaction: MyString
+  experince: MyString
+  description: MyString

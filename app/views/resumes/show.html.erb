@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @resume.name %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @resume.DOB %>
+</p>
+
+<p>
+  <b>Qulifaction:</b>
+  <%= @resume.qulifaction %>
+</p>
+
+<p>
+  <b>Experince:</b>
+  <%= @resume.experince %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @resume.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>

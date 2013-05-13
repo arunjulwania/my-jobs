@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Full name:</b>
+  <%= @jobseeker.full_name %>
+</p>
+
+<p>
+  <b>Father name:</b>
+  <%= @jobseeker.father_name %>
+</p>
+
+<p>
+  <b>Mother name:</b>
+  <%= @jobseeker.mother_name %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @jobseeker.DOB %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @jobseeker.gender %>
+</p>
+
+<p>
+  <b>Contact number:</b>
+  <%= @jobseeker.contact_number %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @jobseeker.address %>
+</p>
+
+<p>
+  <b>Pin number:</b>
+  <%= @jobseeker.pin_number %>
+</p>
+
+<p>
+  <b>Primary skills:</b>
+  <%= @jobseeker.primary_skills %>
+</p>
+
+<p>
+  <b>Secondary skills:</b>
+  <%= @jobseeker.secondary_skills %>
+</p>
+
+<p>
+  <b>Work exp:</b>
+  <%= @jobseeker.work_exp %>
+</p>
+
+
+<%= link_to 'Edit', edit_jobseeker_path(@jobseeker) %> |
+<%= link_to 'Back', jobseekers_path %>

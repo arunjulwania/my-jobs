@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Job title:</b>
+  <%= @admin.job_title %>
+</p>
+
+<p>
+  <b>Company name:</b>
+  <%= @admin.company_name %>
+</p>
+
+<p>
+  <b>Qulification:</b>
+  <%= @admin.qulification %>
+</p>
+
+<p>
+  <b>Experince:</b>
+  <%= @admin.experince %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @admin.summary %>
+</p>
+
+<p>
+  <b>No of post:</b>
+  <%= @admin.no_of_post %>
+</p>
+
+<p>
+  <b>Contact number:</b>
+  <%= @admin.contact_number %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @admin.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_path(@admin) %> |
+<%= link_to 'Back', admins_path %>

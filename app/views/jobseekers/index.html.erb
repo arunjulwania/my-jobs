@@ -1,0 +1,42 @@
+<h1>Listing jobseekers</h1>
+
+<table>
+  <tr>
+    <th>Full name</th>
+    <th>Father name</th>
+    <th>Mother name</th>
+    <th>Dob</th>
+    <th>Gender</th>
+    <th>Contact number</th>
+    <th>Address</th>
+    <th>Pin number</th>
+    <th>Primary skills</th>
+    <th>Secondary skills</th>
+    <th>Work exp</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobseekers.each do |jobseeker| %>
+  <tr>
+    <td><%= jobseeker.full_name %></td>
+    <td><%= jobseeker.father_name %></td>
+    <td><%= jobseeker.mother_name %></td>
+    <td><%= jobseeker.DOB %></td>
+    <td><%= jobseeker.gender %></td>
+    <td><%= jobseeker.contact_number %></td>
+    <td><%= jobseeker.address %></td>
+    <td><%= jobseeker.pin_number %></td>
+    <td><%= jobseeker.primary_skills %></td>
+    <td><%= jobseeker.secondary_skills %></td>
+    <td><%= jobseeker.work_exp %></td>
+    <td><%= link_to 'Show', jobseeker %></td>
+    <td><%= link_to 'Edit', edit_jobseeker_path(jobseeker) %></td>
+    <td><%= link_to 'Destroy', jobseeker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'Creat profile', new_jobseeker_path %>
+<%= link_to 'Creat resume', new_resume_path %>
