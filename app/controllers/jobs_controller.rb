@@ -7,24 +7,21 @@ class JobsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @jobs }
     end
-  end
+  end 
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
     @job = Job.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @job }
     end
   end
-
   # GET /jobs/new
   # GET /jobs/new.json
   def new
     @job = Job.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @job }
@@ -80,4 +77,23 @@ class JobsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def search
+      @job = Job.search do
+        fulltext params[:query]
+      end.results
+        #@resultTransfer = @jobs.results
+        #debugger
+        #respond_to do |format|
+        #format.html { redirect_to home_index_url(@resultTransfer) }
+       # format.xml  { render :xml => @jobs }
+       
+        respond_to do |format|
+        format.html { render  "home/index" }
+        format.xml  { render :xml => @jobs }
+       
+        
+    end
+      #redirect_to search_view_path(params[:@resultTransfer])
+   end
 end
+

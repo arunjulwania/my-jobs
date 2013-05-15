@@ -1,6 +1,18 @@
-<h1>Listing admins</h1>
+ <div >
+    <!-- <table>
+    </br>
+    </br>
+    </br>
+    <tr>
+     <th> hello</th><th><%#= current_user.fist_name %><%#= current_user.last_name %><th>
+   </tr>
 
-<table>
+     <tr>
+     <th>Your Email ID</th><th><%#= current_user.email %></th>
+    </tr>
+</table> -->
+</br></br></br>
+<table  border="2">
   <tr>
     <th>Job title</th>
     <th>Company name</th>
@@ -31,7 +43,10 @@
   </tr>
 <% end %>
 </table>
-
 <br />
-
 <%= link_to 'post job', new_job_path%>
+<%= form_tag search_jobs_path, :method => :get do %>
+<p>
+  <%= text_field_tag :query, params[:query] %> <%= submit_tag "Search!" %>
+</p>
+<% end %>

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-  	@job=Job.all
+  	 @job=Job.all
   end
 end

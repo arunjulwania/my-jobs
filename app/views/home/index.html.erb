@@ -1,4 +1,9 @@
 <h1>Home#index</h1>
+<%= form_tag search_jobs_path, :method => :get do %>
+<p>
+  <%= text_field_tag :query, params[:query] %> <%= submit_tag "Search!" %>
+</p>
+<% end %>
   
 <% @job.each do |job| %>
   	 Job title
@@ -15,6 +20,8 @@
     <%= job.no_of_post %>
     Contact number
     <%= job.contact_number %>
-   <%= job.email %>
+   <%= job.email %></br>
+   <%= link_to 'Apply',user_session_path %> 
    </br></br>
     <% end %>
+<%#= debug @resultTransfer %>

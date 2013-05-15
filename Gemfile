@@ -37,4 +37,7 @@ gem 'jquery-rails'
 # To use debugger
  gem 'debugger'
  gem 'devise'
- 
+# gem 'thinking-sphinx', '3.0.0'
+ gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'bootstrap-sass'

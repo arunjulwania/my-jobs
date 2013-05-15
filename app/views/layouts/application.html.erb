@@ -1,27 +1,66 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>Jobportal</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Myapp" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
- <p class="navbar-text pull-right"></p>
- <%= yield %>
-<%if user_signed_in?%>
-  Logged in as 
- <strong><%= current_user.email %></strong>.
-  <%= link_to 'Change password  and Id', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+    <style type="text/css">
 
+body { margin:0; padding:0; }
+ 
+/* Make Header Sticky */
+#header_container123 { background:#000000; border:1px solid #666; height:60px; left:0; position:fixed; width:100%; top:0; }
+#header123{ line-height:60px; margin:0 auto; width:940px; text-align:center; }
+ 
+/* CSS for the content of page. I am giving top and bottom padding of 80px to make sure the header and footer do not overlap the content.*/
+#container123 { margin:0 auto; overflow:auto; padding:80px 0; width:940px; }
+#content123{}
+ 
+/* Make Footer Sticky */
+#footer_container123 { background:#000000; border:1px solid #666; bottom:0; height:40px; left:0; position:fixed; width:100%; color:#ffffff}
+#footer123 { line-height:60px; margin:0 auto; width:940px; text-align:center; color:#ffffff}
+</style>
+  </head>
+  <body>
+    <div id="header_container123" >
+    <div id="header123">
+      
+          <%= render 'layouts/navigation' %>
+        
+    </div>
+</div>
+<!-- END: Sticky Header -->
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          </footer>
+        </div>
+      </div> 
+    </div> 
+    <div id="footer_container123">
+    <div id="footer123">
+          home
+          About_us
+          Contact_us
+          Gallary
 
-</body>
+   
+            
+    </div>
+</div>
+
+  </body>
 </html>
