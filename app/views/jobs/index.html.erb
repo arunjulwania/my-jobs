@@ -1,51 +1,81 @@
- <div >
-    <!-- <table>
-    </br>
-    </br>
-    </br>
-    <tr>
-     <th> hello</th><th><%#= current_user.fist_name %><%#= current_user.last_name %><th>
-   </tr>
-
+</br>
+</br>
+</br>
+<style type="text/css">
+.img1{
+        height: 100px;
+        width: 50px;
+      }
+</style>
+<div>
+  <table>
      <tr>
-     <th>Your Email ID</th><th><%#= current_user.email %></th>
-    </tr>
-</table> -->
-</br></br></br>
-<table  border="2">
-  <tr>
-    <th>Job title</th>
-    <th>Company name</th>
-    <th>Qulification</th>
-    <th>Experince</th>
-    <th>Summary</th>
-    <th>No of post</th>
-    <th>Contact number</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.job_title %></td>
-    <td><%= job.company_name %></td>
-    <td><%= job.qulification %></td>
-    <td><%= job.experince %></td>
-    <td><%= job.summary %></td>
-    <td><%= job.no_of_post %></td>
-    <td><%= job.contact_number %></td>
-    <td><%= job.email %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+       <th> Welcome</th>
+       <th ><%=current_user.fist_name %><th>
+     </tr>
+  </table> 
+  </br>
+  </br>
+  </br>
+</div>
+<div>
+  <div style="float:left; width:800px; " >
+    <table >
+      <tr>
+        <th>Job title</th>
+        <th>Company name</th>
+        <th>Qulification</th>
+        <th>Experince</th>
+        <th>Summary</th>
+        <th>No of post</th>
+        <th>Contact number</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= job.job_title %></td>
+          <td><%= job.company_name %></td>
+          <td><%= job.qulification %></td>
+          <td><%= job.experince %></td>
+          <td><%= job.summary %></td>
+          <td><%= job.no_of_post %></td>
+          <td><%= job.contact_number %></td>
+          <td><%= job.email %></td>
+          <td><%= link_to 'Show', job %></td>
+          <td><%= link_to 'Edit', edit_job_path(job) %></td>
+          <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
 </table>
-<br />
-  <%= link_to 'new job post ', new_job_path %>
+</div>
+<div style="float:right ;width:350px; border-left-style:solid; margen-lefy:2px;">
+  <table><th>your profile</th>
+    <tr>
+      <td>Your Email ID</td>
+      <td><%= current_user.email %></td>
+    </tr>
+    <tr>
+    <td>Name:</td><td><%= current_user.fist_name %><%= current_user.last_name %></td>
+    </tr><tr>
+
+    <td>contact number :</td><td><%= current_user.contact_number %></td>
+  </tr>
+  <tr>
+    <td>Addrass:<%= current_user.addrass %></td>
+ </tr>
+  <tr>
+    <td>Image</td>
+     <td><%= image_tag "Mahatma.jpg", :class=>"img1" %>
+</td>
+  </tr>
+</table>
+</div></div>
+ <%= link_to 'new job post ', new_job_path %>
 
  <%#= form_tag search_jobs_path, :method => :get do %>
   <%#= text_field_tag :query, params[:query] %> <%#= submit_tag "Search!" %>
 <%# end %>
+    

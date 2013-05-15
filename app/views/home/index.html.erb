@@ -1,27 +1,34 @@
-<h1>Home#index</h1>
-<%#= form_tag search_jobs_path, :method => :get do %>
-<p>
-  <%#= text_field_tag :query, params[:query] %> <%#= submit_tag "Search!" %>
-</p>
-<%# end %>
-  
+<%= render 'layouts/header'%>
+<div align="center">
+   <input type="text" name="lname" style="width:400px; " placeholder="php,indore" >
+  <input type="submit" value="Submit">
+  <br>
+  <br>
+  <table>
+    <tr>
+     <th>Job title</th>
+     <th></th>
+     <th></th>
+     <th>Company name</th>
+       <th></th>
+       <th></th>
+     <th>Qulification</th>
+       <th></th>
+       <th></th>
+   </tr>
 <% @job.each do |job| %>
-  	 Job title
-    <%= job.job_title %></br>
-    Company name
-    <%= job.company_name %></br>
-    Qulification
-    <%= job.qulification %>
-    Experince
-    <%= job.experince %>
-    Summary
-    <%= job.summary %>
-     No of post
-    <%= job.no_of_post %>
-    Contact number
-    <%= job.contact_number %>
-   <%= job.email %></br>
-   <%= link_to 'Apply',user_session_path %> 
-   </br></br>
+    <tr>
+    <td><%= job.job_title %></td>
+    <td></td>
+    <td></td>
+    <td><%= job.company_name %></td>
+    <td></td>
+    <td></td>
+    <td><%= job.qulification %></td>
+    <td></td>
+    <td></td>
+    <td><%= link_to 'Apply',user_session_path %></td> 
+     </tr>
     <% end %>
-<%#= debug @resultTransfer %>
+  </table>
+<div>
