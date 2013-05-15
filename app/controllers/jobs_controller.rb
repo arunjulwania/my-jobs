@@ -36,7 +36,7 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-     debugger
+  
     @job = current_user.jobs.new(params[:job])
       
     respond_to do |format|
