@@ -1,9 +1,9 @@
 <h1>Home#index</h1>
-<%= form_tag search_jobs_path, :method => :get do %>
+<%#= form_tag search_jobs_path, :method => :get do %>
 <p>
-  <%= text_field_tag :query, params[:query] %> <%= submit_tag "Search!" %>
+  <%#= text_field_tag :query, params[:query] %> <%#= submit_tag "Search!" %>
 </p>
-<% end %>
+<%# end %>
   
 <% @job.each do |job| %>
   	 Job title

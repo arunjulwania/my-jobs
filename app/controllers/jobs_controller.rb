@@ -77,23 +77,23 @@ class JobsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  def search
-      @job = Job.search do
-        fulltext params[:query]
-      end.results
-        #@resultTransfer = @jobs.results
-        #debugger
-        #respond_to do |format|
-        #format.html { redirect_to home_index_url(@resultTransfer) }
-       # format.xml  { render :xml => @jobs }
+  # def search
+  #     @job = Job.search do
+  #       fulltext params[:query]
+  #     end.results
+  #       #@resultTransfer = @jobs.results
+  #       #debugger
+  #       #respond_to do |format|
+  #       #format.html { redirect_to home_index_url(@resultTransfer) }
+  #      # format.xml  { render :xml => @jobs }
        
-        respond_to do |format|
-        format.html { render  "home/index" }
-        format.xml  { render :xml => @jobs }
+  #       respond_to do |format|
+  #       format.html { render  "home/index" }
+  #       format.xml  { render :xml => @jobs }
        
         
-    end
-      #redirect_to search_view_path(params[:@resultTransfer])
-   end
+  #   end
+  #     #redirect_to search_view_path(params[:@resultTransfer])
+  #  end
 end
 
